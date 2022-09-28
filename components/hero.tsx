@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="flex flex-col justify-center items-center min-h-screen gap-8">
+    <section className="flex flex-col justify-center items-center min-h-screen gap-8 border-b-2">
       <div className="bg-blue-200 w-[200px] h-[200px] rounded-full overflow-hidden">
         <Image
           src="https://avatars.githubusercontent.com/u/76239837?v=4"
