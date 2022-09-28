@@ -1,19 +1,61 @@
+import Image from "next/image";
 import { forwardRef } from "react";
 
 interface ITech {
   type: string;
   name: string;
+  image: string;
 }
 
 const TechStackData: ITech[] = [
-  { type: "language", name: "Javascript" },
-  { type: "language", name: "Typescript" },
-  { type: "frontend", name: "React JS" },
-  { type: "frontend", name: "Next JS" },
-  { type: "backend", name: "Express JS" },
-  { type: "backend", name: "Nest JS" },
-  { type: "database", name: "PostgreSQL" },
-  { type: "database", name: "MongoDB" },
+  {
+    type: "language",
+    name: "Javascript",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    type: "language",
+    name: "Typescript",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  },
+  {
+    type: "frontend",
+    name: "React JS",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+  {
+    type: "frontend",
+    name: "Next JS",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+  },
+  {
+    type: "backend",
+    name: "Express JS",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  },
+  {
+    type: "backend",
+    name: "Nest JS",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg",
+  },
+  {
+    type: "database",
+    name: "PostgreSQL",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  },
+  {
+    type: "database",
+    name: "MongoDB",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  },
 ];
 
 interface ITechStackItem {
@@ -27,8 +69,19 @@ const TechStackItem: React.FC<ITechStackItem> = (props) => {
       <h1 className="text-2xl">{props.title}</h1>
       <div className="border border-black p-2 flex gap-4">
         {props.techs.map((tech) => (
-          <div className="flex flex-col border border-black p-2 justify-center items-center gap-2">
-            <div className="w-[100px] h-[100px] border border-black"></div>
+          <div
+            key={tech.name}
+            className="flex flex-col border border-black p-2 justify-center items-center gap-2"
+          >
+            <div className="w-[100px] h-[100px] border border-black overflow-hidden">
+              <Image
+                src={tech.image}
+                width={100}
+                height={100}
+                layout="responsive"
+                objectFit="cover"
+              />
+            </div>
             <h1>{tech.name}</h1>
           </div>
         ))}
