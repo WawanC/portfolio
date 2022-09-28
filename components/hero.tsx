@@ -13,7 +13,7 @@ const Hero = () => {
         />
       </div>
       <div className="flex flex-col items-center gap-4">
-        <h1 className="font-bold text-4xl">Kurniawan Cristianto</h1>
+        <h1 className="font-bold lg:text-4xl text-2xl">Kurniawan Cristianto</h1>
         <p className="italic font-extralight text-xl">
           Fullstack Javascript Developer
         </p>

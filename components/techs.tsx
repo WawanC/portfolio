@@ -16,6 +16,27 @@ const TechStackData: ITech[] = [
   { type: "database", name: "MongoDB" },
 ];
 
+interface ITechStackItem {
+  title: string;
+  techs: ITech[];
+}
+
+const TechStackItem: React.FC<ITechStackItem> = (props) => {
+  return (
+    <div className="flex flex-col lg:w-1/3 items-center gap-2">
+      <h1 className="text-2xl">{props.title}</h1>
+      <div className="border border-black p-2 flex gap-4">
+        {props.techs.map((tech) => (
+          <div className="flex flex-col border border-black p-2 justify-center items-center gap-2">
+            <div className="w-[100px] h-[100px] border border-black"></div>
+            <h1>{tech.name}</h1>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const Techs = forwardRef<HTMLElement>((_, ref) => {
   return (
     <section
@@ -23,65 +44,23 @@ const Techs = forwardRef<HTMLElement>((_, ref) => {
       className="flex flex-col py-24 justify-center items-center gap-8 border-b-2"
     >
       <h1 className="font-bold text-4xl">Tech Stack</h1>
-      <div className="border border-black p-4 flex flex-wrap gap-4 w-[80%] justify-center">
-        <div className="flex flex-col w-1/3 items-center bg-red-100 gap-2">
-          <h1 className="text-2xl">Language</h1>
-          <div className="border border-black p-2 flex gap-4">
-            {TechStackData.filter((tech) => tech.type === "language").map(
-              (tech) => (
-                <div className="flex flex-col border border-black p-2 justify-center items-center gap-2">
-                  <div className="w-[100px] h-[100px] border border-black"></div>
-                  <h1>{tech.name}</h1>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-        <div className="flex flex-col w-1/3 items-center bg-blue-100 gap-2">
-          <h1 className="text-2xl">Frontend</h1>
-          <div className="border border-black p-2 flex gap-4">
-            {TechStackData.filter((tech) => tech.type === "frontend").map(
-              (tech) => (
-                <div className="flex flex-col border border-black p-2 justify-center items-center gap-2">
-                  <div className="w-[100px] h-[100px] border border-black"></div>
-                  <h1>{tech.name}</h1>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-        <div className="flex flex-col w-1/3 items-center bg-green-100 gap-2">
-          <h1 className="text-2xl">Backend</h1>
-          <div className="border border-black p-2 flex gap-4">
-            {TechStackData.filter((tech) => tech.type === "backend").map(
-              (tech) => (
-                <div className="flex flex-col border border-black p-2 justify-center items-center gap-2">
-                  <div className="w-[100px] h-[100px] border border-black"></div>
-                  <h1>{tech.name}</h1>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-        <div className="flex flex-col w-1/3 items-center bg-yellow-100 gap-2">
-          <h1 className="text-2xl">Database</h1>
-          <div className="border border-black p-2 flex gap-4">
-            {TechStackData.filter((tech) => tech.type === "database").map(
-              (tech) => (
-                <div className="flex flex-col border border-black p-2 justify-center items-center gap-2">
-                  <div className="w-[100px] h-[100px] border border-black"></div>
-                  <h1>{tech.name}</h1>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-        {/* {TechStackData.map((stack) => (
-          <div className="flex flex-col border border-black p-2 justify-center items-center gap-2">
-            <div className="w-[100px] h-[100px] border border-black"></div>
-            <h1>{stack.name}</h1>
-          </div>
-        ))} */}
+      <div className="border border-black p-4 flex flex-wrap gap-4 lg:w-[80%] justify-center">
+        <TechStackItem
+          title="Language"
+          techs={TechStackData.filter((stack) => stack.type === "language")}
+        />
+        <TechStackItem
+          title="Frontend"
+          techs={TechStackData.filter((stack) => stack.type === "frontend")}
+        />
+        <TechStackItem
+          title="Backend"
+          techs={TechStackData.filter((stack) => stack.type === "backend")}
+        />
+        <TechStackItem
+          title="Database"
+          techs={TechStackData.filter((stack) => stack.type === "database")}
+        />
       </div>
     </section>
   );

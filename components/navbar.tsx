@@ -21,7 +21,7 @@ interface INavLinkProps {
 const NavLink: React.FC<INavLinkProps> = (props) => {
   return (
     <li
-      className="hover:cursor-pointer hover:text-white"
+      className="hover:cursor-pointer hover:font-bold"
       onClick={() => scrollToSection(props.sectionRef)}
     >
       {props.children}
@@ -31,9 +31,9 @@ const NavLink: React.FC<INavLinkProps> = (props) => {
 
 const NavBar: React.FC<IProps> = (props) => {
   return (
-    <nav className="flex bg-blue-300 justify-between items-center px-12 py-4">
+    <nav className="flex bg-blue-300 lg:justify-between justify-center items-center px-12 py-4">
       <h1 className="font-bold text-xl">Portfolio</h1>
-      <ul className="flex gap-8">
+      <ul className="lg:flex gap-8 hidden">
         <NavLink sectionRef={props.sectionsRef.aboutMeRef}>About</NavLink>
         <NavLink sectionRef={props.sectionsRef.techsRef}>Techs</NavLink>
         <NavLink sectionRef={props.sectionsRef.projectsRef}>Projects</NavLink>

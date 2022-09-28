@@ -7,9 +7,9 @@ const AboutMe = forwardRef<HTMLElement>((_, ref) => {
       className="flex flex-col py-24 justify-center items-center gap-8 border-b-2"
     >
       <h1 className="font-bold text-4xl">About Me</h1>
-      <div className="flex max-w-[50%] gap-8">
+      <div className="flex flex-col lg:flex-row lg:max-w-[50%] items-center gap-8">
         <div className="w-[200px] h-[250px] border border-black rounded-md"></div>
-        <div className="w-3/4">
+        <div className="lg:w-3/4 w-4/5 text-justify">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
