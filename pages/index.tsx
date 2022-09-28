@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import AboutMe from "../components/aboutme";
+import ContactMe from "../components/contactme";
 import Hero from "../components/hero";
 import NavBar from "../components/navbar";
 import Projects from "../components/projects";
@@ -13,6 +14,7 @@ const Home: NextPage = () => {
       <AboutMe />
       <Techs />
       <Projects />
+      <ContactMe />
     </>
   );
 };
