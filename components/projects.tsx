@@ -1,3 +1,5 @@
+import { forwardRef } from "react";
+
 const ProjectsData = [
   { name: "Project A" },
   { name: "Project B" },
@@ -5,9 +7,12 @@ const ProjectsData = [
   { name: "Project D" },
 ];
 
-const Projects = () => {
+const Projects = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <section className="flex flex-col py-24 justify-center items-center gap-8 border-b-2">
+    <section
+      ref={ref}
+      className="flex flex-col py-24 justify-center items-center gap-8 border-b-2"
+    >
       <h1 className="font-bold text-4xl">My Projects</h1>
       <div className="border border-black flex p-4 gap-4 flex-wrap justify-center w-[80%]">
         {ProjectsData.map((project) => (
@@ -19,6 +24,6 @@ const Projects = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Projects;

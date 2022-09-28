@@ -1,3 +1,5 @@
+import { forwardRef } from "react";
+
 const TechStackData = [
   { name: "Javascript" },
   { name: "Typescript" },
@@ -7,9 +9,12 @@ const TechStackData = [
   { name: "MongoDB" },
 ];
 
-const Techs = () => {
+const Techs = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <section className="flex flex-col py-24 justify-center items-center gap-8 border-b-2">
+    <section
+      ref={ref}
+      className="flex flex-col py-24 justify-center items-center gap-8 border-b-2"
+    >
       <h1 className="font-bold text-4xl">Tech Stack</h1>
       <div className="border border-black p-4 flex gap-4">
         {TechStackData.map((stack) => (
@@ -21,6 +26,6 @@ const Techs = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Techs;

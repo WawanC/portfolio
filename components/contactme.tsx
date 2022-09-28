@@ -1,3 +1,5 @@
+import { forwardRef } from "react";
+
 const ContactData = [
   { name: "Email" },
   { name: "GitHub" },
@@ -5,9 +7,12 @@ const ContactData = [
   { name: "Discord" },
 ];
 
-const ContactMe = () => {
+const ContactMe = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <section className="flex flex-col py-24 justify-center items-center gap-8 border-b-2">
+    <section
+      ref={ref}
+      className="flex flex-col py-24 justify-center items-center gap-8 border-b-2"
+    >
       <h1 className="font-bold text-4xl">Contact Me</h1>
       <div className="flex border border-black p-4 gap-4 w-[80%] justify-between">
         {ContactData.map((contact) => (
@@ -19,6 +24,6 @@ const ContactMe = () => {
       </div>
     </section>
   );
-};
+});
 
 export default ContactMe;
