@@ -65,15 +65,15 @@ interface ITechStackItem {
 
 const TechStackItem: React.FC<ITechStackItem> = (props) => {
   return (
-    <div className="flex flex-col lg:w-1/3 items-center gap-2">
-      <h1 className="text-2xl">{props.title}</h1>
-      <div className="border border-black p-2 flex gap-4">
+    <div className="flex flex-col lg:w-1/3 items-center gap-2 border p-2 shadow-2xl rounded">
+      <h1 className="text-2xl font-bold">{props.title}</h1>
+      <div className="p-2 flex gap-4">
         {props.techs.map((tech) => (
           <div
             key={tech.name}
-            className="flex flex-col border border-black p-2 justify-center items-center gap-2"
+            className="flex flex-col p-2 justify-center items-center gap-2"
           >
-            <div className="w-[100px] h-[100px] border border-black overflow-hidden">
+            <div className="w-[100px] h-[100px] overflow-hidden">
               <Image
                 src={tech.image}
                 width={100}
@@ -97,7 +97,7 @@ const Techs = forwardRef<HTMLElement>((_, ref) => {
       className="flex flex-col py-24 justify-center items-center gap-8 border-b-2"
     >
       <h1 className="font-bold text-4xl">Tech Stack</h1>
-      <div className="border border-black p-4 flex flex-wrap gap-4 lg:w-[80%] justify-center">
+      <div className="p-4 flex flex-wrap gap-4 lg:w-[80%] justify-center">
         <TechStackItem
           title="Language"
           techs={TechStackData.filter((stack) => stack.type === "language")}

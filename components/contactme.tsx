@@ -50,7 +50,7 @@ const ContactIcon: React.FC<IContactIcon> = (props) => {
       className="flex flex-col justify-center items-center gap-4 w-1/3 lg:w-fit hover:cursor-pointer"
       onClick={clickHandler}
     >
-      <div className="w-[75px] h-[75px] rounded-full border border-black overflow-hidden">
+      <div className="w-[75px] h-[75px] rounded-full overflow-hidden">
         <Image
           src={props.image}
           width={100}
@@ -71,7 +71,7 @@ const ContactMe = forwardRef<HTMLElement>((_, ref) => {
       className="flex flex-col py-24 justify-center items-center gap-8 border-b-2"
     >
       <h1 className="font-bold text-4xl">Contact Me</h1>
-      <div className="flex border border-black p-4 gap-4 lg:w-[80%] lg:justify-between flex-wrap justify-center">
+      <div className="flex p-4 gap-4 lg:w-[80%] lg:justify-between flex-wrap justify-center">
         {ContactData.map((contact) => (
           <ContactIcon
             title={contact.name}
