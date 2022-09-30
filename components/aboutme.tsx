@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { forwardRef } from "react";
 
 const AboutMe = forwardRef<HTMLElement>((_, ref) => {
@@ -8,15 +9,21 @@ const AboutMe = forwardRef<HTMLElement>((_, ref) => {
     >
       <h1 className="font-bold text-4xl">About Me</h1>
       <div className="flex flex-col lg:flex-row lg:max-w-[50%] items-center gap-8">
-        <div className="w-[200px] h-[250px] border border-black rounded-md"></div>
+        <div className="w-[200px] h-[250px] border border-black rounded-md overflow-hidden">
+          <Image
+            src="/images/profil.jpeg"
+            width={100}
+            height={150}
+            layout="responsive"
+            objectFit="cover"
+          />
+        </div>
         <div className="lg:w-3/4 w-4/5 text-justify">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          I am a full stack programmer who likes to learn new technology and
+          skills. I am currently studying at Sriwijaya University. I usually use
+          javascript or typescript language to work on projects. In my spare
+          time, I like to learn about new skills through online courses or
+          working on personal projects.
         </div>
       </div>
     </section>
