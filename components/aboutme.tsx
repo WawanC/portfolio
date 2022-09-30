@@ -16,6 +16,7 @@ const AboutMe = forwardRef<HTMLElement>((_, ref) => {
             height={150}
             layout="responsive"
             objectFit="cover"
+            alt="aboutme_pic"
           />
         </div>
         <div className="lg:w-3/4 w-4/5 text-justify">
@@ -29,5 +30,7 @@ const AboutMe = forwardRef<HTMLElement>((_, ref) => {
     </section>
   );
 });
+
+AboutMe.displayName = "AboutMe";
 
 export default AboutMe;

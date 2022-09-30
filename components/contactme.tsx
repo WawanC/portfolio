@@ -57,6 +57,7 @@ const ContactIcon: React.FC<IContactIcon> = (props) => {
           height={100}
           layout="responsive"
           objectFit="cover"
+          alt={props.title}
         />
       </div>
       <span>{props.title}</span>
@@ -77,11 +78,14 @@ const ContactMe = forwardRef<HTMLElement>((_, ref) => {
             title={contact.name}
             image={contact.image}
             link={contact.link}
+            key={contact.name}
           />
         ))}
       </div>
     </section>
   );
 });
+
+ContactMe.displayName = "ContactMe";
 
 export default ContactMe;

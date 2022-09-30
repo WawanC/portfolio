@@ -80,6 +80,7 @@ const TechStackItem: React.FC<ITechStackItem> = (props) => {
                 height={100}
                 layout="responsive"
                 objectFit="cover"
+                alt={tech.name}
               />
             </div>
             <h1>{tech.name}</h1>
@@ -118,5 +119,7 @@ const Techs = forwardRef<HTMLElement>((_, ref) => {
     </section>
   );
 });
+
+Techs.displayName = "Techs";
 
 export default Techs;
