@@ -43,7 +43,7 @@ const NavBar: React.FC<IProps> = (props) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6 hover:cursor-pointer absolute left-4"
+        className="w-6 h-6 hover:cursor-pointer absolute left-4 lg:hidden"
         onClick={() => toggleSideMenu(true)}
       >
         <path
@@ -58,9 +58,7 @@ const NavBar: React.FC<IProps> = (props) => {
   return (
     <nav className="flex bg-blue-300 lg:justify-between justify-center items-center px-12 py-4 sticky top-0 z-10 ">
       {!isSideMenuOpen && <MenuIcon />}
-      <h1 className="font-bold text-xl" onClick={() => toggleSideMenu(true)}>
-        KurniawanC
-      </h1>
+      <h1 className="font-bold text-xl">KurniawanC</h1>
       {isSideMenuOpen && (
         <div
           className="lg:hidden fixed bg-black top-0 left-0 right-0 bottom-0 z-10 opacity-50"
